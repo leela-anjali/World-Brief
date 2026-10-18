@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORLD BRIEF | Global News Dashboard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      color: #172338;
+    }
+
+    header {
+      background: #101d31;
+      color: white;
+      padding: 25px 7%;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      color: #c4d2e4;
+      margin-bottom: 0;
+    }
+
+    nav {
+      background: #1c2e47;
+      padding: 14px 7%;
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+    }
+
+    .intro h2 {
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: #5c687a;
+      line-height: 1.6;
+    }
+
+    .search {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .filters button {
+      padding: 10px 15px;
+      border: 1px solid #ccd5e1;
+      border-radius: 20px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .filters button.active,
+    .filters button:hover {
+      background: #173e70;
+      color: white;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit, minmax(260px, 1fr)
+      );
+      gap: 18px;
+    }
+
+    .story {
+      background: white;
+      border: 1px solid #e1e7ef;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 3px 12px #1723380a;
+    }
+
+    .category {
+      color: #245ca0;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .story h3 {
+      line-height: 1.4;
+      margin: 12px 0;
+    }
+
+    .story p {
+      color: #586579;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .source {
+      color: #245ca0;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .note {
+      color: #657185;
+      font-size: 13px;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #657185;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>WORLD BRIEF</h1>
+    <p>The world, explained daily.</p>
+  </header>
+
+  <nav>
+    <a href="#home">Top Stories</a>
+    <a href="#news">Technology</a>
+    <a href="#news">Business</a>
+    <a href="#news">Politics</a>
+    <a href="#news">Disasters</a>
+    <a href="#news">Science</a>
+  </nav>
+
+  <main id="home">
+    <section class="intro">
+      <h2>Your global news briefing</h2>
+      <p>
+        Explore major developments in technology, business,
+        politics, science, disasters and the world economy.
+      </p>
+    </section>
+
+    <input
+      id="search"
+      class="search"
+      type="search"
+      placeholder="Search stories or topics..."
+      aria-label="Search news stories"
+    >
+
+    <div class="filters" id="filters">
+      <button class="active" data-category="All">All</button>
+      <button data-category="Technology">Technology</button>
+      <button data-category="Business">Business</button>
+      <button data-category="Politics">Politics</button>
+      <button data-category="Disasters">Disasters</button>
+      <button data-category="Science">Science</button>
+    </div>
+
+    <p class="note">
+      DEMO MODE — These are example stories, not live news.
+    </p>
+
+    <section class="news-grid" id="news">
+
+      <article class="story" data-category="Technology">
+        <span class="category">Technology</span>
+        <h3>How semiconductor advances could change electronics</h3>
+        <p>
+          Example summary: Explore how smaller, more efficient
+          chips can affect computing, sensors and future devices.
+        </p>
+        <a class="source" href="https://www.nature.com/"
+           target="_blank" rel="noopener noreferrer">
+          Explore science reporting ↗
+        </a>
+      </article>
+
+      <article class="story" data-category="Business">
+        <span class="category">Business</span>
+        <h3>What changes in the global economy mean for industry</h3>
+        <p>
+          Example summary: Learn how trade, investment and
+          energy costs can influence companies and jobs.
+        </p>
+        <a class="source" href="https://www.reuters.com/business/"
+           target="_blank" rel="noopener noreferrer">
+          Explore business news ↗
+        </a>
+      </article>
+
+      <article class="story" data-category="Politics">
+        <span class="category">Politics</span>
+        <h3>Why international policy decisions matter</h3>
+        <p>
+          Example summary: Understand how government decisions
+          can influence technology, trade and international relations.
+        </p>
+        <a class="source" href="https://apnews.com/"
+           target="_blank" rel="noopener noreferrer">
+          Explore world reporting ↗
+        </a>
+      </article>
+
+      <article class="story" data-category="Disasters">
+        <span class="category">Disasters</span>
+        <h3>Understanding natural hazards around the world</h3>
+        <p>
+          Example summary: Learn how monitoring systems and
+          early-warning networks help communities prepare.
+        </p>
+        <a class="source" href="https://www.gdacs.org/"
+           target="_blank" rel="noopener noreferrer">
+          Explore global disaster alerts ↗
+        </a>
+      </article>
+
+      <article class="story" data-category="Science">
+        <span class="category">Science</span>
+        <h3>New research in energy and advanced materials</h3>
+        <p>
+          Example summary: Discover how scientific research
+          may influence batteries, renewable energy and electronics.
+        </p>
+        <a class="source" href="https://www.science.org/"
+           target="_blank" rel="noopener noreferrer">
+          Explore science news ↗
+        </a>
+      </article>
+
+    </section>
+
+    <p id="empty" hidden>
+      No matching stories. Try another search or category.
+    </p>
+  </main>
+
+  <footer>
+    WORLD BRIEF · Your personal global news dashboard
+  </footer>
+
+  <script>
+    const search = document.getElementById("search");
+    const filters = document.getElementById("filters");
+    const stories = [...document.querySelectorAll(".story")];
+    const empty = document.getElementById("empty");
+
+    let selectedCategory = "All";
+
+    function updateStories() {
+      const query = search.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      stories.forEach(story => {
+        const category = story.dataset.category;
+        const matchesCategory =
+          selectedCategory === "All" ||
+          category === selectedCategory;
+
+        const matchesSearch =
+          story.innerText.toLowerCase().includes(query);
+
+        const visible = matchesCategory && matchesSearch;
+        story.hidden = !visible;
+
+        if (visible) visibleCount++;
+      });
+
+      empty.hidden = visibleCount !== 0;
+    }
+
+    filters.addEventListener("click", event => {
+      const button = event.target.closest("button");
+      if (!button) return;
+
+      selectedCategory = button.dataset.category;
+
+      filters.querySelectorAll("button").forEach(item => {
+        item.classList.toggle("active", item === button);
+      });
+
+      updateStories();
+    });
+
+    search.addEventListener("input", updateStories);
+  </script>
+</body>
+</html>
